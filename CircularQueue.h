@@ -1,9 +1,8 @@
 #pragma once
-const int MAX_QUEUE_SIZE = 100;
+const int MAX_QUEUE_SIZE = 10;
 #include <iostream>
 #include <string>
 using std::string;
-
 // 오류 처리 함수
 inline void error(const char* message) {
 	std::cout << message << std::endl;
@@ -48,6 +47,11 @@ public:
 		}
 	}
 	void display() {
-		std::cout << rear - front << " ";
+		std::cout << "큐 갯수는 : " << rear - front << std::endl;
+		std::cout << "---------------Queue---------------" << std::endl;
+		int maxi = (front < rear) ? rear : rear + MAX_QUEUE_SIZE;
+		for (int i = front + 1; i <= maxi; i++) {
+			std::cout << data[i % MAX_QUEUE_SIZE] << std::endl;
+		}
 	}
 };

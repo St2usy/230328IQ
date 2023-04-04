@@ -16,44 +16,19 @@ int main() {
 		std::cin >> time >> name >> sex >> location;
 
 		if (sex == 'm') {
-			if (location == 'R') Male.addRear(name);
+			if (location == 'R') Male.enqueue(name);
 			else Male.addFront(name);
 		}
 		else {
-			if (location == 'R') Female.addRear(name);
+			if (location == 'R') Female.enqueue(name);
 			else Female.addFront(name);
 		}
-	}
-	for (int i = 0; i < MAX_QUEUE_SIZE; i++) {
-		if (Male.getFront() != "") {
-			if (Female.getFront() != "") count++;
-			else {
-				if (Female.getRear() != "") count++;
-			}
-		}
-		else if (Male.getRear() != "") {
-			if (Female.getFront() != "") count++;
-			else {
-				if (Female.getRear() != "") count++;
-			}
+		if (!Male.isEmpty() && !Female.isEmpty()) //여자 남자 한쌍을 이룰 경우 
+		{
+			std::cout << "커플이 탄생했습니다! " << Male.deleteFront() << "와 " << Female.deleteFront() << std::endl;
+			count++;
 		}
 	}
-	for (int i = 0; i < count; i++) {
-		std::cout << "Matched : ";
-		if (Male.isEmpty() || Female.isEmpty()) {
-			if (Male.getFront() != "") {
-				if (Female.getFront() != "") std::cout << Male.getFront() << " " << Female.getFront();
-				else std::cout << Male.getFront() << " " << Female.getRear();
-			}
-			else  {
-				if (Female.getFront() != "") std::cout << Male.getRear() << " " << Female.getFront();
-				else std::cout << Male.getRear() << " " << Female.getRear();
-			}
-		}
-		std::cout << std::endl;
-	}
-	std::cout << count << " ";
-	Male.display();
-	Female.display();
-	return 0;
+
+	std::cout << count << " " << Male.numcount() - count << " " << Female.numcount();
 }

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="CircularDeque.h" />
     <ClInclude Include="CircularQueue.h" />
+    <ClInclude Include="temp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="미팅 주선 프로그램.cpp" />

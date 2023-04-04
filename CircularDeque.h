@@ -28,9 +28,27 @@ public:
 		else return data[rear];
 	}
 	void display() {
+		std::cout << "µ¦ÀÇ °¹¼ö´Â : ";
 		if (front < rear)
 			std::cout << (rear - front) % MAX_QUEUE_SIZE << std::endl;
 		else
 			std::cout << (rear + MAX_QUEUE_SIZE - front) % MAX_QUEUE_SIZE << std::endl;
+		std::cout << "---------------Deque---------------" << std::endl;
+		int maxi = (front < rear) ? rear : rear + MAX_QUEUE_SIZE;
+		for (int i = front + 1; i <= maxi; i++) {
+			std::cout << data[i % MAX_QUEUE_SIZE] << std::endl;
+		}
 	}
-}; 
+	string getindex(int i) {
+		return data[i];
+	}
+	int numcount() {
+		int count = 0;
+		for (int i = 0; i < MAX_QUEUE_SIZE; i++) {
+			if (data[i] != "") {
+				count++;
+			}
+		}
+		return count;
+	}
+};
