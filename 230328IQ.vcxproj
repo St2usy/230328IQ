@@ -21,10 +21,11 @@
   <ItemGroup>
     <ClInclude Include="CircularDeque.h" />
     <ClInclude Include="CircularQueue.h" />
-    <ClInclude Include="temp.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="미팅 주선 프로그램.cpp" />
+    <ClCompile Include="정렬 가능 여부 확인 프로그램.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

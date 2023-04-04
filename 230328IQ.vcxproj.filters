@@ -15,18 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="temp.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CircularQueue.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CircularDeque.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="미팅 주선 프로그램.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬 가능 여부 확인 프로그램.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

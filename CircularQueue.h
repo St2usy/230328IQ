@@ -1,8 +1,9 @@
 #pragma once
-const int MAX_QUEUE_SIZE = 10;
+const int MAX_QUEUE_SIZE = 20;
 #include <iostream>
 #include <string>
 using std::string;
+
 // 오류 처리 함수
 inline void error(const char* message) {
 	std::cout << message << std::endl;
@@ -13,7 +14,7 @@ class CircularQueue {
 protected:
 	int rear;
 	int front;
-	string data[MAX_QUEUE_SIZE];
+	int data[MAX_QUEUE_SIZE];
 public:
 	CircularQueue()
 		: rear(0), front(0) {}
@@ -26,24 +27,30 @@ public:
 		if ((rear + 1) % MAX_QUEUE_SIZE == front) return true;
 		else return false;
 	}
-	void enqueue(string n) {
+	void enqueue(int n) {
 		if (isFuLL()) { error("Error :: Queue is Full !!"); }
 		else {
 			rear = (rear + 1) % MAX_QUEUE_SIZE;
 			data[rear] = n;
 		}
 	}
-	string dequeue() {
+	int dequeue() {
 		if (isEmpty()) { error("Error :: Queue is Empty !!"); }
 		else {
 			front = (front + 1) % MAX_QUEUE_SIZE;
 			return data[front];
 		}
 	}
-	string peek() {
+	int peek() {
 		if (isEmpty()) { error("Error :: Queue is Empty !!"); }
 		else {
 			return data[(front + 1) % MAX_QUEUE_SIZE];
+		}
+	}
+	int peeknext() {
+		if (isEmpty()) { error("Error :: Queue is Empty !!"); }
+		else {
+			return data[(front + 2) % MAX_QUEUE_SIZE];
 		}
 	}
 	void display() {
@@ -53,5 +60,12 @@ public:
 		for (int i = front + 1; i <= maxi; i++) {
 			std::cout << data[i % MAX_QUEUE_SIZE] << std::endl;
 		}
+	}
+	int min() {
+		int min = data[0];
+		for (int i = 0; i < MAX_QUEUE_SIZE; i++) {
+			if (data[i] < min) min = data[i];
+		}
+		return min;
 	}
 };

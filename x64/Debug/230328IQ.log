@@ -1,3 +1,5 @@
-﻿  미팅 주선 프로그램.cpp
-C:\Users\USER\Desktop\신철언\컴퓨터공학부\개발공부\자료구조 과제\230328IQ\230328IQ\CircularQueue.h(42): warning C4715: 'CircularQueue::dequeue': 모든 제어 경로에서 값을 반환하지는 않습니다.
+﻿  정렬 가능 여부 확인 프로그램.cpp
+C:\Users\USER\Desktop\신철언\컴퓨터공학부\개발공부\자료구조 과제\230328IQ\230328IQ\CircularQueue.h(43): warning C4715: 'CircularQueue::dequeue': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\USER\Desktop\신철언\컴퓨터공학부\개발공부\자료구조 과제\230328IQ\230328IQ\CircularQueue.h(49): warning C4715: 'CircularQueue::peek': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\USER\Desktop\신철언\컴퓨터공학부\개발공부\자료구조 과제\230328IQ\230328IQ\Stack.h(42): warning C4715: 'ArrayStack::pop': 모든 제어 경로에서 값을 반환하지는 않습니다.
   230328IQ.vcxproj -> C:\Users\USER\Desktop\신철언\컴퓨터공학부\개발공부\자료구조 과제\230328IQ\230328IQ\x64\Debug\230328IQ.exe
