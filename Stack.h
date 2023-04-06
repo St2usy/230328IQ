@@ -12,7 +12,7 @@ inline void error1(const char* message) {
 class ArrayStack {
 private:
 	int top;
-	int data[MAX_STACK_SIZE];
+	int data[MAX_STACK_SIZE]={0};
 public:
 	ArrayStack()
 		: top(-1) {}
@@ -33,7 +33,7 @@ public:
 		}
 	}
 	int pop() { // 수식 변환 할때 char형으로 바꾼다.
-		if (isEmpty()) { error1("Error :: Stack is Empty !!"); }
+		if (isEmpty()) { return -1; }
 		else {
 			int popdata = data[top];
 			top -= 1;
@@ -41,7 +41,7 @@ public:
 		}
 	}
 	int peek() {
-		if (isEmpty()) { return 0; }
+		if (isEmpty()) { return -1; }
 		else {
 			return data[top];
 		}
@@ -58,5 +58,15 @@ public:
 		for (int i = 0; i <= top; i++) {
 			std::cout << data[i] << std::endl;
 		}
+	}
+	int min() {
+		int min = NULL;
+		for (int i = 0; i < MAX_STACK_SIZE; i++) {
+			min = data[0];
+			if (min > data[i]) {
+				min = data[i];
+			}
+		}
+		return min;
 	}
 };

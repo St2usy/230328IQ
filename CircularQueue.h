@@ -35,14 +35,14 @@ public:
 		}
 	}
 	int dequeue() {
-		if (isEmpty()) { error("Error :: Queue is Empty !!"); }
+		if (isEmpty()) { return -1; }
 		else {
 			front = (front + 1) % MAX_QUEUE_SIZE;
 			return data[front];
 		}
 	}
 	int peek() {
-		if (isEmpty()) { error("Error :: Queue is Empty !!"); }
+		if (isEmpty()) { return -1; }
 		else {
 			return data[(front + 1) % MAX_QUEUE_SIZE];
 		}
